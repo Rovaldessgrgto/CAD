@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestión de Emergencias</title>
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         :root {
@@ -34,7 +32,6 @@
             min-height: 100vh;
         }
 
-        /* Barra superior */
         .header {
             grid-column: 1 / -1;
             background-color: var(--azul-oscuro);
@@ -56,7 +53,6 @@
             font-weight: 600;
         }
 
-        /* Panel izquierdo */
         .sidebar {
             background: white;
             box-shadow: var(--sombra);
@@ -81,7 +77,6 @@
                 color: var(--azul-principal);
             }
 
-        /* Guías y protocolos */
         .protocol-list {
             list-style: none;
         }
@@ -112,7 +107,6 @@
                 font-size: 14px;
             }
 
-        /* Asignador de recursos */
         .resource-selector {
             margin-top: 15px;
         }
@@ -160,7 +154,6 @@
             background-color: var(--verde);
         }
 
-        /* Contenido principal */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 300px;
@@ -169,7 +162,6 @@
             padding: 20px;
         }
 
-        /* Mapa */
         .map-container {
             background: white;
             border-radius: 10px;
@@ -235,7 +227,6 @@
                 border-radius: 4px;
             }
 
-        /* Chat */
         .chat-container {
             background: white;
             border-radius: 10px;
@@ -306,7 +297,6 @@
                 cursor: pointer;
             }
 
-        /* Recursos asignados */
         .assigned-resources {
             background: white;
             border-radius: 10px;
@@ -432,7 +422,6 @@
             </div>
         </section>
 
-        <!-- Recursos asignados -->
         <section class="assigned-resources">
             <h2 class="section-title">
                 <i class="fas fa-list-check"></i>
@@ -496,7 +485,6 @@
             document.getElementById('coordenadas').value = e.latlng.lat.toFixed(6) + ', ' + e.latlng.lng.toFixed(6);
         });
 
-        // Buscar ubicación
         document.getElementById('search-button').addEventListener('click', function() {
             const address = document.getElementById('address-input').value;
             if (address.trim() === '') return;
@@ -525,7 +513,6 @@
                 });
         });
 
-        // Chat (funcionalidad básica)
         const chatInput = document.querySelector('.chat-input input');
         const chatButton = document.querySelector('.chat-input button');
         const chatMessages = document.querySelector('.chat-messages');
@@ -540,7 +527,6 @@
                 chatInput.value = '';
                 chatMessages.scrollTop = chatMessages.scrollHeight;
 
-                // Simular respuesta
                 setTimeout(() => {
                     const responses = [
                         "Mensaje recibido",
@@ -564,7 +550,6 @@
             if (e.key === 'Enter') sendMessage();
         });
 
-        // Asignación de recursos
         document.querySelectorAll('.resource-option').forEach(option => {
             option.addEventListener('click', function() {
                 const resourceType = this.querySelector('span').textContent;
