@@ -91,7 +91,6 @@
             color: var(--azul-principal);
         }
         
-        /* Estilos para la tabla de trabajadores */
         .workers-table {
             width: 100%;
             border-collapse: collapse;
@@ -139,7 +138,6 @@
             color: #333;
         }
         
-        /* Botones */
         .btn {
             padding: 10px 20px;
             border-radius: 6px;
@@ -168,7 +166,6 @@
             font-size: 14px;
         }
         
-        /* Formulario de asignación */
         .assign-form {
             margin-top: 30px;
             padding-top: 20px;
@@ -355,7 +352,6 @@
     </div>
 
     <script>
-        // Selección de trabajador
         document.querySelectorAll('.workers-table button').forEach(btn => {
             btn.addEventListener('click', function() {
                 const row = this.closest('tr');
@@ -366,14 +362,12 @@
                 document.getElementById('selected-worker').textContent = `${name} (${id})`;
                 document.getElementById('current-schedule').textContent = schedule;
                 
-                // Desplazarse al formulario de asignación
                 document.querySelector('.assign-form').scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
         
-        // Selección de horario
         document.querySelectorAll('.time-slot').forEach(slot => {
             slot.addEventListener('click', function() {
                 document.querySelectorAll('.time-slot').forEach(s => {
