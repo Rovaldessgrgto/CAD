@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($errores)) {
         try {
-            // Preparar la consulta SQL
             $sql = "INSERT INTO recursos (insumos, vehiculos, personal, estatus, id_usuario, fecha_registro) 
                     VALUES (?, ?, ?, ?, ?, NOW())";
             
